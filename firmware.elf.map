@@ -1,0 +1,141 @@
+
+Discarded input sections
+
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .group         0x00000000        0xc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .text          0x00000000        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .data          0x00000000        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .bss           0x00000000        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x08000000         0x00200000         xr
+sram             0x20000000         0x00030000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+LOAD /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+LOAD /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/libgcc.a
+                0x20030000                        _estack = (ORIGIN (sram) + LENGTH (sram))
+
+.vectors
+ *(.vectors)
+
+.text           0x08000000       0x8c
+ *(.text*)
+ .text.startup.main
+                0x08000000       0x50 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+                0x08000000                main
+ .text._reset   0x08000050       0x3c /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+                0x08000050                _reset
+
+.glue_7         0x0800008c        0x0
+ .glue_7        0x0800008c        0x0 linker stubs
+
+.glue_7t        0x0800008c        0x0
+ .glue_7t       0x0800008c        0x0 linker stubs
+
+.vfp11_veneer   0x0800008c        0x0
+ .vfp11_veneer  0x0800008c        0x0 linker stubs
+
+.v4_bx          0x0800008c        0x0
+ .v4_bx         0x0800008c        0x0 linker stubs
+
+.iplt           0x0800008c        0x0
+ .iplt          0x0800008c        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.rel.dyn        0x0800008c        0x0
+ .rel.iplt      0x0800008c        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.rodata
+ *(.rodata*)
+
+.data           0x20000000        0x0 load address 0x0800008c
+                0x20000000                        _sdata = .
+ *(.first_data)
+ *(.data SORT_BY_NAME(.data.*))
+                0x20000000                        _edata = .
+                0x0800008c                        _sidata = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x0800008c
+ .igot.plt      0x20000000        0x0 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.bss            0x20000000        0x0 load address 0x0800008c
+                0x20000000                        _sbss = .
+ *(.bss SORT_BY_NAME(.bss.*) COMMON)
+                0x20000000                        _ebss = .
+                0x20000000                        . = ALIGN (0x8)
+                0x20000000                        _end = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x54b
+ .debug_info    0x00000000      0x54b /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_abbrev   0x00000000      0x215
+ .debug_abbrev  0x00000000      0x215 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_loclists
+                0x00000000      0x129
+ .debug_loclists
+                0x00000000      0x129 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_aranges  0x00000000       0x28
+ .debug_aranges
+                0x00000000       0x28 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_rnglists
+                0x00000000       0x55
+ .debug_rnglists
+                0x00000000       0x55 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_macro    0x00000000     0x160e
+ .debug_macro   0x00000000       0xdc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x000000dc      0xacc /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000ba8       0x22 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000bca       0x5b /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000c25       0x2a /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000c4f       0x94 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000ce3       0x43 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000d26      0x103 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000e29       0x3a /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000e63       0x57 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000eba       0x6a /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00000f24      0x1df /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x00001103       0x89 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x0000118c      0x460 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+ .debug_macro   0x000015ec       0x22 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_line     0x00000000      0x401
+ .debug_line    0x00000000      0x401 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_str      0x00000000     0x533c
+ .debug_str     0x00000000     0x533c /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+                               0x54e7 (size before relaxing)
+
+.comment        0x00000000       0x46
+ .comment       0x00000000       0x46 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+                                 0x47 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x34
+ .ARM.attributes
+                0x00000000       0x34 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
+
+.debug_frame    0x00000000       0x38
+ .debug_frame   0x00000000       0x38 /var/folders/37/z46xz8t50jx5kdr15qxfnpwm0000gn/T//ccA09ogb.o
